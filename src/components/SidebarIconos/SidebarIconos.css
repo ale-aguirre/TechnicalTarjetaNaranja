@@ -1,0 +1,47 @@
+.sidebar__Container {
+    display: block;
+    width: 100%;
+    padding: 0 25px;
+    
+  }
+  .sidebar__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 11px 0;
+  }
+  .sidebar__Container .sidebar__Title {
+    margin-left: 24px;
+    font-size: 14px;
+    
+  }
+  .sidebar__wrapper .sidebar__Icono {
+    font-size: 22px;
+  }
+  
+  /* hover al sidebar */
+  .sidebar__Container:hover {
+    background-color: lightgray;
+    cursor: pointer;
+    
+  }
+  
+  .sidebar__Container:hover > .sidebar__Icono {
+    color: purple;
+  }
+  
+  .sidebar__Container:hover > .sidebar__Title {
+    font-weight: bold;
+  }
+  
+  /* cuando se selecciona cada icono */
+  .sidebar__Container.selected {
+    background-color: lightgray;
+    font-weight: bold;
+  }
+  .sidebar__Container.selected > .sidebar__Icono {
+    color: purple;
+  }
+  .sidebar__Container.selected > .sidebar__Title {
+    font-weight: bold;
+  }
+  

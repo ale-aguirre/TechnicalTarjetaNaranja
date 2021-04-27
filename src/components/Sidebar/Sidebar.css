@@ -1,0 +1,27 @@
+.sidebar {
+    background-color: var(--main-white);
+    color: rgb(96, 89, 81);
+    fill: rgb(96, 89, 81);
+    align-items: center;
+    justify-content: center;
+    /* height: auto;
+    display: block;
+    position: sticky;
+    left: 0; */
+  }
+  @media (min-width: 992px) {
+    .sidebar {
+      flex: 0.14;
+      max-width: 863px;
+      /* position: sticky;
+      top: 56px;
+      display: block; */
+    }
+  }
+
+  .sidebar__separator {
+    border: 0;
+    height: 0.5px;
+    background-color: var(--separator-color);
+    margin: 12px 0px;
+  }
