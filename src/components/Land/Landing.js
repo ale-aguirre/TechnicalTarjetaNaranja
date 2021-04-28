@@ -11,7 +11,7 @@ const Landing = () => {
           <div className="cont_logo">
             <img
               className="logo_poke1"
-              src="https://fontmeme.com/temporary/e19ce87579cae761386e44f68d3e7226.png"
+              src="https://fontmeme.com/permalink/210428/e19ce87579cae761386e44f68d3e7226.png"
             />
             <br />
             <img
@@ -32,7 +32,7 @@ const Landing = () => {
               <br />
               <br />
               <img  className="logo_poke3"
-              src="https://fontmeme.com/temporary/b3865c50fd8a551d2f78382247f3dddb.png"/>
+              src="https://fontmeme.com/permalink/210428/a67ea63708bd3643244f4598b0fda00e.png"/>
           </div>
         </FadeIn>
       </div>
