@@ -1,11 +1,6 @@
 import React from "react";
-import SidebarIconos from "../SidebarIconos/SidebarIconos";
-import HomeIcon from "@material-ui/icons/Home";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -15,6 +10,7 @@ const Sidebar = () => {
             <img
               className="sidebar__Icono"
               src="https://img.icons8.com/fluent/48/000000/pokemon.png"
+              alt="home"
             />
             <span className="sidebar__Title">Home</span>
           </div>
@@ -34,6 +30,7 @@ const Sidebar = () => {
             <img
               className="sidebar__Icono"
               src="https://img.icons8.com/color/48/000000/bullbasaur.png"
+              alt="github"
             />
             <span className="sidebar__Title">Github</span>
           </div>
@@ -50,6 +47,7 @@ const Sidebar = () => {
             <img
               className="sidebar__Icono"
               src="https://img.icons8.com/color/48/000000/charmander.png"
+              alt="link"
             />
             <span className="sidebar__Title">LinkedIn</span>
           </div>
@@ -59,7 +57,7 @@ const Sidebar = () => {
       <a
         rel="noreferrer"
         target="_blank"
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=aguirrealexis.cba@gmail.com&su=EXCELENTE ALE!&body=CONTRATADO!" 
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=aguirrealexis.cba@gmail.com&su=EXCELENTE ALE!&body=CONTRATADO!"
         style={{ color: "inherit", textDecoration: "none" }}
       >
         <div className="sidebar__Container">
@@ -67,6 +65,7 @@ const Sidebar = () => {
             <img
               className="sidebar__Icono"
               src="https://img.icons8.com/color/48/000000/squirtle.png"
+              alt="gmail"
             />
             <span className="sidebar__Title">E-mail</span>
           </div>
