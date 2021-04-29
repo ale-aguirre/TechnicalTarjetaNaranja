@@ -2,8 +2,6 @@ import React from "react";
 import SidebarIconos from "../SidebarIconos/SidebarIconos";
 import HomeIcon from "@material-ui/icons/Home";
 import "./Sidebar.css";
-import OndemandVideoIcon from "@material-ui/icons/OndemandVideo";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import { Link } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -33,10 +31,6 @@ const Sidebar = () => {
       >
         <SidebarIconos Icon={GitHubIcon} title="Github" />
       </a>
-
-      <Link to="/under" style={{ color: "inherit", textDecoration: "none" }}>
-        <SidebarIconos Icon={ThumbUpIcon} title="Likes" />
-      </Link>
 
       <hr className="sidebar__separator" />
     </div>

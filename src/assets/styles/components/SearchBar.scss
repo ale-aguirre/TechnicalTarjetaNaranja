@@ -1,0 +1,51 @@
+@import "../Vars.scss";
+@import "../Functions.scss";
+@import "../Mixins.scss";
+
+.poke-search {
+  padding-top: rem(2);
+  width: rem(-87);
+  text-align: center;
+  font-size: rem(25);
+  .poke__btn {
+    background-color: $paragraph_color;
+    color: white;
+    height: rem(43.5);
+    margin-top: rem(5);
+    border-radius: 50%;
+  }
+  .search {
+    width: 100%;
+    outline: none;
+    border-radius: rem(50);
+    border: solid rem(2.5) $paragraph_color;
+    font-weight: bold;
+    color: $paragraph_color;
+    text-align: center;
+    margin-top: rem(5);
+    box-shadow: 0 rem(4) rem(4) rgba(0, 0, 0, 0.25);
+    @include mobil() {
+      margin-left: rem(6);
+      width: rem(93);
+    }
+    @include desktop() {
+      width: rem(301);
+    }
+  }
+  ::-webkit-input-placeholder {
+    text-align: center;
+    opacity: 1;
+  }
+  :-moz-placeholder {
+    text-align: center;
+    opacity: 1;
+  }
+  ::-moz-placeholder {
+    text-align: center;
+    opacity: 1;
+  }
+  :-ms-input-placeholder {
+    text-align: center;
+    opacity: 1;
+  }
+}

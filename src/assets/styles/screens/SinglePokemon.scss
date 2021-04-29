@@ -1,0 +1,245 @@
+@import "../Vars.scss";
+@import "../Functions.scss";
+@import "../Mixins.scss";
+
+.single {
+  background-color: white;
+  padding-top: rem(42);
+  padding-bottom: rem(42);
+  h3 {
+    font-size: rem(35);
+    color: $paragraph_color;
+    font-weight: bold;
+    margin: 0;
+  }
+  hr {
+    @include mobil() {
+      width: rem(205);
+    }
+    @include tablet() {
+      width: rem(415);
+    }
+    height: rem(2.5);
+    background-color: $paragraph_color;
+    margin-left: 0%;
+    margin-right: 50%;
+  }
+
+  &__details {
+    .abiliti_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $paragraph_color;
+      border-radius: 50px;
+      color: white;
+      @include mobil() {
+        width: 100%;
+      }
+      @include tablet() {
+        width: rem(168);
+      }
+      height: rem(47.35);
+      margin-top: rem(25);
+      p {
+        text-align: center;
+        font-size: rem(20);
+        font-weight: 400;
+      }
+    }
+    &__number {
+      color: $paragraph_color;
+      @include mobil() {
+        font-size: rem(35);
+        text-align: left;
+      }
+      @include tablet() {
+        font-size: rem(40);
+        text-align: right;
+      }
+      font-weight: bold;
+    }
+    &__name {
+      text-transform: capitalize;
+      color: $paragraph_color;
+      @include tablet() {
+        font-size: rem(40);
+      }
+      @include mobil() {
+        font-size: rem(25);
+      }
+      font-weight: bold;
+    }
+    &__card {
+      height: rem(385);
+      box-shadow: 0px 4px 4px #00000040;
+      border-radius: rem(25);
+      position: relative;
+      &__image {
+        height: 80%;
+        position: relative;
+        z-index: 1;
+      }
+      .maskpokeball {
+        height: rem(300);
+        z-index: 0;
+      }
+    }
+    &__info {
+      p {
+        margin: 0;
+      }
+    }
+  }
+  &__cont {
+    .abiliti_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $paragraph_color;
+      border-radius: 50px;
+
+      @include mobil() {
+        width: 100%;
+      }
+      @include tablet() {
+        width: rem(168);
+      }
+      height: rem(47.35);
+      margin-top: rem(25);
+      p {
+        text-align: center;
+        font-size: rem(20);
+        font-weight: 400;
+      }
+    }
+    &__number {
+      color: $paragraph_color;
+      @include mobil() {
+        font-size: rem(35);
+        text-align: left;
+      }
+      @include tablet() {
+        font-size: rem(40);
+        text-align: right;
+      }
+      font-weight: bold;
+    }
+    &__name {
+      text-transform: capitalize;
+      color: $paragraph_color;
+      @include tablet() {
+        font-size: rem(40);
+      }
+      @include mobil() {
+        font-size: rem(25);
+      }
+      font-weight: bold;
+    }
+    &__card {
+      height: rem(385);
+      box-shadow: 0px 4px 4px #00000040;
+      border-radius: rem(25);
+      position: relative;
+      &__image {
+        height: 80%;
+        position: relative;
+        z-index: 1;
+      }
+      .maskpokeball {
+        height: rem(300);
+        z-index: 0;
+      }
+    }
+    &__info {
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &__stats {
+    p {
+      margin: 0;
+    }
+    &__stat {
+      @include tablet() {
+        justify-content: space-around;
+      }
+      @include mobil() {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__types {
+    &__type {
+      width: 100%;
+      margin-top: rem(20);
+      border-radius: 50px;
+      text-transform: capitalize;
+      p {
+        color: white;
+        text-align: center;
+        font-size: rem(32);
+      }
+    }
+  }
+
+  &__shiny {
+    &__container {
+      margin-top: rem(50);
+      display: flex;
+      justify-content: space-around;
+      @include mobil() {
+        flex-direction: column;
+      }
+      @include tablet() {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+    &__card {
+      border-radius: rem(20);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      height: rem(234);
+      position: relative;
+      @include mobil() {
+        width: 100%;
+        margin-top: rem(20);
+      }
+      @include tablet() {
+        width: rem(294);
+        margin-top: 0;
+      }
+    }
+    &__image {
+      height: 90%;
+    }
+  }
+}
+
+.item {
+  &__detail {
+    font-size: rem(30);
+    color: $paragraph_color;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  &__value {
+    font-size: rem(30);
+    color: black;
+    font-weight: 400;
+  }
+}
+
+.magi{
+  height: rem(100);
+}
+
+.BackToButton{
+  height: rem(100);
+  font-size: rem(30);
+    color: black;
+    font-weight: 400;
+}

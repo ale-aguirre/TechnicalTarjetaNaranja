@@ -1,0 +1,33 @@
+@import "../Vars.scss";
+@import "../Functions.scss";
+@import "../Mixins.scss";
+.custom-section {
+  padding-top: rem(95);
+  padding-bottom: rem(75);
+  h3 {
+    font-size: rem(35);
+    color: $paragraph_color;
+    font-weight: bold;
+    margin: 0;
+  }
+  hr {
+    @include mobil() {
+      width: rem(205);
+    }
+    @include tablet() {
+      width: rem(415);
+    }
+    height: rem(2.5);
+    background-color: $paragraph_color;
+    margin-left: 0%;
+    margin-right: 50%;
+  }
+  &__items {
+    @include mobil() {
+      padding-top: unset;
+    }
+    @include tablet() {
+      padding-top: rem(15);
+    }
+  }
+}

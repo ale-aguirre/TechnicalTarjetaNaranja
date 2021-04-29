@@ -1,0 +1,35 @@
+@mixin mobil() {
+  @media (min-width: 300px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin button-style() {
+  background-color: $color-primary;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: rem(8);
+
+  &:hover {
+    background-color: lighten($color-primary, 10%);
+    opacity: 1;
+  }
+
+  &:active {
+    background-color: darken($color-primary, 10%);
+    opacity: 1;
+  }
+}
