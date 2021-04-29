@@ -1,0 +1,35 @@
+@import "./assets/styles/Vars.scss";
+@import "./assets/styles/Functions.scss";
+@import "./assets/styles/Mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+* {
+  font-family: "Raleway", sans-serif;
+}
+.container {
+  @include desktop() {
+    max-width: 989px;
+  }
+}
+.home {
+  min-height: 100vh;
+}
+.bgpokeball {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+a {
+  text-decoration: none !important;
+}
+main {
+  position: relative;
+  top: rem(115);
+}
+.bg_app {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url("https://mfiles.alphacoders.com/839/839186.png");
+}

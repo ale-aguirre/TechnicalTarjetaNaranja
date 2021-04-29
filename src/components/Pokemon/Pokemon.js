@@ -28,7 +28,8 @@ const Pokemon = (props) => {
   const generatePokemonJSX = (pokemon) => {
     const { name, id, species, height, weight, types, sprites } = pokemon;
     const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-    const { front_default } = sprites;
+
+    // const { front_default } = sprites;
     return (
       <div className="poke_container">
         <div className="poke_info">
@@ -37,7 +38,7 @@ const Pokemon = (props) => {
             {/* <img src={front_default} /> */}
           </Typography>
         
-          <img style={{ width: "300px", height: "300px" }} src={fullImageUrl} />
+          <img style={{ width: "300px", height: "300px" }} src={fullImageUrl}  alt="imgalt"/>
           <Typography variant="h3">Pokemon Info</Typography>
           <Typography>
             Species: {Mayuscula(species.name)}

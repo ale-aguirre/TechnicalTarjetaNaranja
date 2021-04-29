@@ -2,19 +2,8 @@ import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import FadeIn from "react-fade-in";
 import { fade, makeStyles, useTheme } from "@material-ui/core/styles";
-import SearchIcon from "@material-ui/icons/Search";
 import Drawer from "@material-ui/core/Drawer";
-import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  CircularProgress,
-  Toolbar,
-  TextField,
-} from "@material-ui/core";
-import { Mayuscula } from "../constants";
+import { Toolbar } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -25,8 +14,10 @@ import Sidebar from "../Sidebar/Sidebar";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Fade from "@material-ui/core/Fade";
-import axios from "axios";
-import typeColor from "../helper/typeColors";
+import Loader from "../Pokemon/Loader";
+import ButtonMore from "./ButtonMore";
+import SearchBar from "../Searchbar/SearchBar";
+import Swal from "sweetalert2";
 
 const drawerWidth = 180;
 
@@ -112,12 +103,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   searchContainer: {
-    display: "flex",
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    paddingLeft: "20px",
+    alignItems: "center",
     paddingRight: "20px",
-    marginTop: "5px",
-    marginBottom: "5px",
     borderRadius: "25px",
   },
   searchIcon: {
@@ -125,37 +112,71 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "5px",
     height: "25px",
   },
-  searchInput: {
-    width: "400px",
-    // margin: "px",
-  },
-  pokedexContainer: {
-    display: "flex",
-    height: "auto",
-    backgroundColor: "white",
-    paddingTop: "20px",
-    paddingLeft: "40px",
-    paddingRight: "90px",
-  },
-  cardMedia: {
-    borderRadius: "15px",
-    marginTop: "12px",
-    width: "230px",
-    height: "230px",
-  },
-  cardContent: {
-    textAlign: "center",
-    width: "250px",
-  },
 }));
 
 export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [data, setData] = useState([]);
+  const [nextdata, setNextData] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [searching, setSearching] = useState("");
+  const [issearching, setIsSearching] = useState(false);
   // eslint-disable-next-line
 
-  const handleSearchChange = (e) => {};
+  useEffect(() => {
+    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=18")
+      .then((response) => response.json())
+      .then((responseData) => {
+        setData(responseData.results);
+        setNextData(responseData.next);
+      });
+  }, []);
+
+  const handleShowMore = () => {
+    fetch(nextdata)
+      .then((response) => response.json())
+      .then((responseData) => {
+        setData((prevState) => [...prevState, ...responseData.results]);
+        setNextData(responseData.next);
+      });
+  };
+
+  const handleChange = (event) => {
+    setSearching(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchResults([]);
+    setSearching("");
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searching.toLowerCase()}`)
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
+      .then((responseData) => {
+        setIsSearching(true);
+        setSearchResults([
+          {
+            name: responseData.name,
+            url: `https://pokeapi.co/api/v2/pokemon/${responseData.id}/`,
+          },
+        ]);
+      })
+      .catch((error) => {
+        setIsSearching(false);
+        Swal.fire({
+          title: "Pokemon Not Found!",
+          text: "The Pokemon does not exist",
+          imageUrl: "https://i.pinimg.com/originals/c9/01/03/c901035a8cd3745d6e47fafe6ad048d9.gif",
+          confirmButtonText: "Try Again",
+        });
+        // alert("Pokémon not found " + error);
+      });
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -194,31 +215,22 @@ export default function MiniDrawer(props) {
                 alt="logo"
               />
             </Link>
+
+            {/* buscador / searchbar */}
             <div className={classes.search} />
             <div className={classes.searchContainer}>
-              <SearchIcon className={classes.searchIcon} />
-              <TextField
+              <SearchBar
+                handleSubmit={handleSubmit}
                 className={classes.searchInput}
-                onChange={handleSearchChange}
+                handleChange={handleChange}
                 label="Find your Pokemon"
-                variant="standard"
+                searching={searching}
               />
-            </div>
-            <div className={classes.root} />
-            <div className="header__iconos">
-              <Link
-                to="/profile"
-                style={{ color: "black", textDecoration: "none" }}
-              >
-                {/* {user ? (
-                <FaceIcon color="primary" />
-              ) : (
-                <AccountCircleIcon className="header__icono" />
-              )} */}
-              </Link>
             </div>
           </Toolbar>
         </AppBar>
+
+        {/* opener del sidebar */}
         <Drawer
           variant="permanent"
           className={clsx(classes.drawer, {
@@ -237,26 +249,35 @@ export default function MiniDrawer(props) {
               {theme.direction === "rtl" ? <MenuIcon /> : <MenuIcon />}
             </IconButton>
           </div>
+
+          {/* Sidebar lateral / iconos */}
           <List>
             <Sidebar />
           </List>
         </Drawer>
-        {/* <FadeIn delay="400" transitionDuration="4000">
-          <main className={classes.content}>
-            <div className={classes.toolbar} />
-            {pokemonData ? (
-              <Grid container spacing={6} className={classes.pokedexContainer}>
-                {Object.keys(pokemonData).map(
-                  (pokemonId) =>
-                    pokemonData[pokemonId].name.includes(filter) &&
-                    getPokemonCard(pokemonId)
-                )}
-              </Grid>
+
+        {
+          //seccion del contenido - fade in
+          <FadeIn delay="400" transitionDuration="4000">
+            {/* si esta buscando arroja en el home un titulo con los resultados de busqueda tanto id como nombre */}
+            {issearching === true ? (
+              searchResults.length > 0 ? (
+                <Pokedex title="Results" pokemon={searchResults} />
+              ) : (
+                <Loader />
+              )
+            ) : null}
+            {/* muestra por defecto todos los pokemon, con el boton mostrar mas carga 18 pokemon ordenadamente */}
+            {data.length > 0 ? (
+              <React.Fragment>
+                <Pokedex title="All Pokémon" pokemon={data} />
+                <ButtonMore handleShowMore={handleShowMore} />
+              </React.Fragment>
             ) : (
-              <CircularProgress />
+              <Loader />
             )}
-          </main>
-        </FadeIn> */}
+          </FadeIn>
+        }
       </div>
     </Fade>
   );

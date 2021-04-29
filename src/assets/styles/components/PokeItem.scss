@@ -1,0 +1,233 @@
+@import "../Vars.scss";
+@import "../Functions.scss";
+@import "../Mixins.scss";
+.maskpokeball {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.poke-card {
+  position: relative;
+  text-align: center;
+  background-color: gray;
+  border-radius: rem(16);
+  height: rem(194);
+  padding: rem(13);
+  box-shadow: 0 rem(4) rem(5) rgba(0, 0, 0, 1.25);
+  @include mobil() {
+    width: rem(250);
+  }
+  @include tablet() {
+    width: 100%;
+  }
+  margin-top: 2rem;
+  @include desktop() {
+    width: rem(300);
+  }
+  &__number {
+    font-size: rem(30);
+    font-weight: bold;
+    margin-top: rem(-8);
+  }
+  &__name {
+    text-transform: capitalize;
+    font-size: rem(30);
+    margin-top: rem(-30);
+    font-weight: bold;
+    color: white;
+  }
+  &__type {
+    text-transform: capitalize;
+    color: white;
+    font-weight: 600;
+    width: rem(80);
+    height: rem(26);
+    font-size: rem(15);
+    margin-bottom: rem(6);
+    border-radius: rem(100);
+  }
+  &__image {
+    width: 140px;
+    height: rem(125);
+  }
+}
+
+.fire {
+  background: $fire_bg;
+  .poke-card__number {
+    color: $fire_number;
+  }
+  .poke-card__type {
+    background-color: $fire_types;
+  }
+}
+
+.water {
+  background: $water_bg;
+  .poke-card__number {
+    color: $water_number;
+  }
+  .poke-card__type {
+    background-color: $water_types;
+  }
+}
+
+.grass {
+  background: $grass_bg;
+  .poke-card__number {
+    color: $grass_number;
+  }
+  .poke-card__type {
+    background-color: $grass_types;
+  }
+}
+
+.flying {
+  background: $flying_bg;
+  .poke-card__number {
+    color: $flying_number;
+  }
+  .poke-card__type {
+    background-color: $flying_types;
+  }
+}
+
+.normal {
+  background: $normal_bg;
+  .poke-card__number {
+    color: $normal_number;
+  }
+  .poke-card__type {
+    background-color: $normal_types;
+  }
+}
+
+.fighting {
+  background: $fighting_bg;
+  .poke-card__number {
+    color: $fighting_number;
+  }
+  .poke-card__type {
+    background-color: $fighting_types;
+  }
+}
+
+.bug {
+  background: $bug_bg;
+  .poke-card__number {
+    color: $bug_number;
+  }
+  .poke-card__type {
+    background-color: $bug_types;
+  }
+}
+
+.poison {
+  background: $poison_bg;
+  .poke-card__number {
+    color: $poison_number;
+  }
+  .poke-card__type {
+    background-color: $poison_types;
+  }
+}
+
+.ground {
+  background: $ground_bg;
+  .poke-card__number {
+    color: $ground_number;
+  }
+  .poke-card__type {
+    background-color: $ground_types;
+  }
+}
+
+.rock {
+  background: $rock_bg;
+  .poke-card__number {
+    color: $rock_number;
+  }
+  .poke-card__type {
+    background-color: $rock_types;
+  }
+}
+
+.psychic {
+  background: $psychic_bg;
+  .poke-card__number {
+    color: $psychic_number;
+  }
+  .poke-card__type {
+    background-color: $psychic_types;
+  }
+}
+
+.ghost {
+  background: $ghost_bg;
+  .poke-card__number {
+    color: $ghost_number;
+  }
+  .poke-card__type {
+    background-color: $ghost_types;
+  }
+}
+
+.steel {
+  background: $steel_bg;
+  .poke-card__number {
+    color: $steel_number;
+  }
+  .poke-card__type {
+    background-color: $steel_types;
+  }
+}
+
+.electric {
+  background: $electric_bg;
+  .poke-card__number {
+    color: $electric_number;
+  }
+  .poke-card__type {
+    background-color: $electric_types;
+  }
+}
+
+.fairy {
+  background: $fairy_bg;
+  .poke-card__number {
+    color: $fairy_number;
+  }
+  .poke-card__type {
+    background-color: $fairy_types;
+  }
+}
+
+.ice {
+  background: $ice_bg;
+  .poke-card__number {
+    color: $ice_number;
+  }
+  .poke-card__type {
+    background-color: $ice_types;
+  }
+}
+
+.dragon {
+  background: $dragon_bg;
+  .poke-card__number {
+    color: $dragon_number;
+  }
+  .poke-card__type {
+    background-color: $dragon_types;
+  }
+}
+
+.dark {
+  background: $dark_bg;
+  .poke-card__number {
+    color: $dark_number;
+  }
+  .poke-card__type {
+    background-color: $dark_types;
+  }
+}
