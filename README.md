@@ -33,4 +33,4 @@
 
 
 
-This project was mady for technical pruposes, [Alexis Aguirre](http://github.com/ale-aguirre).
+This project was mady for technical purposes, by [Alexis Aguirre](http://github.com/ale-aguirre).
