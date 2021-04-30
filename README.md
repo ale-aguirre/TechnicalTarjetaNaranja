@@ -12,7 +12,7 @@
 
 </div>
 
-## <a href="https://poke-tn.web.app/pokedex" target="_blank">DEMO</a>
+## <a href="https://poke-tn.web.app/" target="_blank">DEMO</a>
 ## Screenshots
 <img src="https://i.ibb.co/yXxq8RP/portada.png" target="_blank" alt="portada"/>
 <img src="https://i.ibb.co/f0Lcgy3/home.png" target="_blank" alt="home"/>
