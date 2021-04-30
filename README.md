@@ -12,7 +12,7 @@
 
 </div>
 
-## <a href="https://poke-tn.web.app/" target="_blank">DEMO</a>
+## <img src="https://cdn.icon-icons.com/icons2/851/PNG/512/pikachu_icon-icons.com_67535.png" width="50px"/><a href="https://poke-tn.web.app/" target="_blank">DEMO</a><img src="https://cdn.icon-icons.com/icons2/851/PNG/512/pikachu_icon-icons.com_67535.png" width="50px"/>
 ## Screenshots
 <img src="https://i.ibb.co/yXxq8RP/portada.png" target="_blank" alt="portada"/>
 <img src="https://i.ibb.co/f0Lcgy3/home.png" target="_blank" alt="home"/>
